@@ -75,9 +75,6 @@ async function renderCategorySections() {
     `);
   }
   el.categorySections.innerHTML = sections.join("");
-  el.homeCount.textContent = `${state.categories.length} categories`;
-  el.aboutCount.textContent = "Static JSON architecture";
-  el.vendorCount.textContent = "30 example vendors";
 }
 
 function vendorCardHtml(vendor, withTag) {

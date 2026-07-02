@@ -80,6 +80,48 @@
       ],
       "createdAt": "2026-07-02T19:46:52.921Z",
       "updatedAt": "2026-07-02T19:46:52.921Z"
+    },
+    {
+      "id": 1783023558196,
+      "name": "Ammar Trading",
+      "owner": "Ammar",
+      "phone": "+91 70352 47873",
+      "email": "",
+      "website": "",
+      "maps": "https://maps.app.goo.gl/78fjR9WXVE6EKsXK6",
+      "address": "College Rd, Model Township, Mosjid Lane, Gangpar Dhumkar, Hailakandi, Assam 788155",
+      "description": "Tea wholesaler, famous around the area.",
+      "category": "groceries",
+      "categoryName": "Groceries & Essentials",
+      "workingDays": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "openingTime": "10:00",
+      "closingTime": "18:00",
+      "rating": 5,
+      "services": [
+        "Wholesale",
+        "Bulk"
+      ],
+      "social": {
+        "instagram": "",
+        "facebook": ""
+      },
+      "reviewProvider": "Google",
+      "isVerified": false,
+      "image": "assets/vendors/groceries/ammar-trading-1783023558196.png",
+      "logo": "assets/vendors/groceries/ammar-trading-1783023558196.png",
+      "gallery": [
+        "assets/vendors/groceries/ammar-trading-1783023558196.png"
+      ],
+      "createdAt": "2026-07-02T20:19:18.981Z",
+      "updatedAt": "2026-07-02T20:19:18.981Z"
     }
   ]
 }

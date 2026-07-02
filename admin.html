@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin • VendorsOrg</title>
+  <meta name="description" content="VendorsOrg admin panel for adding and managing vendors and categories." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="navbar">
+      <a class="brand" href="index.html" aria-label="VendorsOrg home">
+        <span class="brand-mark">VO</span>
+        <span>VendorsOrg</span>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <ul class="nav-desktop">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#categories">Categories</a></li>
+          <li><a href="index.html#vendor-cta">Become a vendor</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        type="button"
+      >
+        <span></span>
+      </button>
+    </div>
+
+    <div class="container mobile-menu" id="mobileMenu">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#categories">Categories</a>
+      <a href="index.html#vendor-cta">Become a vendor</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section">
+      <div class="container stack">
+        <div class="badge">Admin control center</div>
+        <h1>Vendor Management</h1>
+        <p>Add new vendors, create categories, and keep the directory updated from one place.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#add-vendor">Add vendor</a>
+          <a class="btn secondary" href="#manage-categories">Manage categories</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="hero-panel">
+          <div class="hero-stat">
+            <strong>Draft</strong>
+            <span>Vendor form ready for data entry</span>
+          </div>
+          <div class="hero-stat">
+            <strong>Static first</strong>
+            <span>Designed for JSON + GitHub update flow</span>
+          </div>
+          <div class="hero-stat">
+            <strong>Future ready</strong>
+            <span>Can connect to a serverless API later</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="add-vendor">
+      <div class="container detail-layout">
+        <section class="detail-main">
+          <div class="stack">
+            <div class="badge">Add vendor</div>
+            <h2 class="section-title">New vendor details</h2>
+            <p class="small">Fill in the fields below. Later this form will submit to the GitHub update flow.</p>
+          </div>
+
+          <form id="vendorForm" class="stack" enctype="multipart/form-data">
+            <div class="detail-section">
+              <h3>Business information</h3>
+              <div class="grid-2">
+                <label class="stack">
+                  <span>Business name *</span>
+                  <input type="text" id="businessName" name="businessName" placeholder="Example Salon" required />
+                </label>
+
+                <label class="stack">
+                  <span>Owner name *</span>
+                  <input type="text" id="ownerName" name="ownerName" placeholder="Rina Das" required />
+                </label>
+
+                <label class="stack">
+                  <span>Phone number *</span>
+                  <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required />
+                </label>
+
+                <label class="stack">
+                  <span>Email</span>
+                  <input type="email" id="email" name="email" placeholder="hello@example.com" />
+                </label>
+
+                <label class="stack">
+                  <span>Website</span>
+                  <input type="url" id="website" name="website" placeholder="https://example.com" />
+                </label>
+
+                <label class="stack">
+                  <span>Google Maps link *</span>
+                  <input type="url" id="maps" name="maps" placeholder="https://maps.google.com/..." required />
+                </label>
+              </div>
+
+              <div class="stack mt-3">
+                <label class="stack">
+                  <span>Address *</span>
+                  <textarea id="address" name="address" rows="3" placeholder="Hailakandi, Assam" required></textarea>
+                </label>
+
+                <label class="stack">
+                  <span>Description *</span>
+                  <textarea id="description" name="description" rows="5" placeholder="Describe what this vendor offers." required></textarea>
+                </label>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Category</h3>
+              <div class="grid-2">
+                <label class="stack">
+                  <span>Select category *</span>
+                  <select id="category" name="category" required>
+                    <option value="">Choose category</option>
+                    <option value="beauty">Beauty &amp; Self Care</option>
+                    <option value="clothing">Clothing &amp; Accessories</option>
+                    <option value="groceries">Groceries &amp; Essentials</option>
+                    <option value="restaurants">Food &amp; Restaurants</option>
+                    <option value="medical">Medical Essentials &amp; Pharmaceuticals</option>
+                    <option value="__new__">+ Add new category</option>
+                  </select>
+                </label>
+
+                <label class="stack hidden" id="newCategoryGroup">
+                  <span>New category name</span>
+                  <input type="text" id="newCategoryName" name="newCategoryName" placeholder="Example: Electronics" />
+                </label>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Working schedule</h3>
+              <div class="stack">
+                <div>
+                  <div class="small mb-1">Working days *</div>
+                  <div class="detail-badges">
+                    <label class="badge"><input type="checkbox" name="workingDays" value="Monday"> Monday</label>
+                    <label class="badge"><input type="checkbox" name="workingDays" value="Tuesday"> Tuesday</label>
+                    <label class="badge"><input type="checkbox" name="workingDays" value="Wednesday"> Wednesday</label>
+                    <label class="badge"><input type="checkbox" name="workingDays" value="Thursday"> Thursday</label>
+                    <label class="badge"><input type="checkbox" name="workingDays" value="Friday"> Friday</label>
+                    <label class="badge"><input type="checkbox" name="workingDays" value="Saturday"> Saturday</label>
+                    <label class="badge"><input type="checkbox" name="workingDays" value="Sunday"> Sunday</label>
+                  </div>
+                </div>
+
+                <div class="grid-2">
+                  <label class="stack">
+                    <span>Opening time *</span>
+                    <input type="time" id="openingTime" name="openingTime" required />
+                  </label>
+
+                  <label class="stack">
+                    <span>Closing time *</span>
+                    <input type="time" id="closingTime" name="closingTime" required />
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Image and branding</h3>
+              <div class="grid-2">
+                <label class="stack">
+                  <span>Photo *</span>
+                  <input type="file" id="photo" name="photo" accept="image/*" required />
+                </label>
+
+                <label class="stack">
+                  <span>Logo file name</span>
+                  <input type="text" id="logo" name="logo" placeholder="logo.webp" />
+                </label>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Services and social links</h3>
+              <div class="grid-2">
+                <label class="stack">
+                  <span>Services offered</span>
+                  <textarea id="services" name="services" rows="5" placeholder="Haircut&#10;Facial&#10;Bridal Makeup"></textarea>
+                </label>
+
+                <div class="stack">
+                  <label class="stack">
+                    <span>Instagram</span>
+                    <input type="url" id="instagram" name="instagram" placeholder="https://instagram.com/..." />
+                  </label>
+
+                  <label class="stack">
+                    <span>Facebook</span>
+                    <input type="url" id="facebook" name="facebook" placeholder="https://facebook.com/..." />
+                  </label>
+
+                  <label class="stack">
+                    <span>Rating</span>
+                    <input type="number" id="rating" name="rating" min="0" max="5" step="0.1" value="4.5" />
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="detail-actions">
+              <button type="submit" class="btn">Add vendor</button>
+              <button type="reset" class="btn secondary">Clear form</button>
+            </div>
+          </form>
+        </section>
+
+        <aside class="detail-side">
+          <div class="stack">
+            <div class="badge">Category tools</div>
+            <h3 class="footer-title">Manage categories</h3>
+            <p class="small">New categories added here will later appear automatically on the homepage.</p>
+          </div>
+
+          <section class="detail-section" id="manage-categories">
+            <h3>Existing categories</h3>
+            <ul class="detail-list">
+              <li><span>Beauty &amp; Self Care</span><strong>Active</strong></li>
+              <li><span>Clothing &amp; Accessories</span><strong>Active</strong></li>
+              <li><span>Groceries &amp; Essentials</span><strong>Active</strong></li>
+              <li><span>Food &amp; Restaurants</span><strong>Active</strong></li>
+              <li><span>Medical Essentials &amp; Pharmaceuticals</span><strong>Active</strong></li>
+            </ul>
+          </section>
+
+          <section class="detail-section">
+            <h3>Admin notes</h3>
+            <div class="empty">
+              This page is UI only for now. Next step is wiring it to the save flow.
+            </div>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>VendorsOrg</div>
+        <div id="year"></div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

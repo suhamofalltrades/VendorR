@@ -19,6 +19,10 @@
     {
       "id": "medical",
       "name": "Medical Essentials & Pharmaceuticals"
+    },
+    {
+      "id": "electronics",
+      "name": "Electronics"
     }
   ]
 }

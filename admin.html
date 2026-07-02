@@ -65,32 +65,13 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="hero-panel">
-          <div class="hero-stat">
-            <strong>Draft</strong>
-            <span>Vendor form ready for data entry</span>
-          </div>
-          <div class="hero-stat">
-            <strong>Static first</strong>
-            <span>Designed for JSON + GitHub update flow</span>
-          </div>
-          <div class="hero-stat">
-            <strong>Future ready</strong>
-            <span>Can connect to a serverless API later</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section" id="add-vendor">
       <div class="container detail-layout">
         <section class="detail-main">
           <div class="stack">
             <div class="badge">Add vendor</div>
             <h2 class="section-title">New vendor details</h2>
-            <p class="small">Fill in the fields below. Later this form will submit to the GitHub update flow.</p>
+            <p class="small">Fill in the fields below.</p>
           </div>
 
           <form id="vendorForm" class="stack" enctype="multipart/form-data">
@@ -124,7 +105,7 @@
 
                 <label class="stack">
                   <span>Google Maps link *</span>
-                  <input type="url" id="maps" name="maps" placeholder="https://maps.google.com/..." required />
+                  <input type="url" id="maps" name="maps" placeholder="https://maps.google.com/..." />
                 </label>
               </div>
 
@@ -201,11 +182,6 @@
                   <span>Photo *</span>
                   <input type="file" id="photo" name="photo" accept="image/*" required />
                 </label>
-
-                <label class="stack">
-                  <span>Logo file name</span>
-                  <input type="text" id="logo" name="logo" placeholder="logo.webp" />
-                </label>
               </div>
             </div>
 
@@ -247,25 +223,11 @@
           <div class="stack">
             <div class="badge">Category tools</div>
             <h3 class="footer-title">Manage categories</h3>
-            <p class="small">New categories added here will later appear automatically on the homepage.</p>
           </div>
 
           <section class="detail-section" id="manage-categories">
             <h3>Existing categories</h3>
-            <ul class="detail-list">
-              <li><span>Beauty &amp; Self Care</span><strong>Active</strong></li>
-              <li><span>Clothing &amp; Accessories</span><strong>Active</strong></li>
-              <li><span>Groceries &amp; Essentials</span><strong>Active</strong></li>
-              <li><span>Food &amp; Restaurants</span><strong>Active</strong></li>
-              <li><span>Medical Essentials &amp; Pharmaceuticals</span><strong>Active</strong></li>
-            </ul>
-          </section>
-
-          <section class="detail-section">
-            <h3>Admin notes</h3>
-            <div class="empty">
-              This page is UI only for now. Next step is wiring it to the save flow.
-            </div>
+            <div id="existingCategories"></div>
           </section>
         </aside>
       </div>

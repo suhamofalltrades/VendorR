@@ -7,8 +7,38 @@
       "category": "beauty",
       "categoryName": "Beauty & Self Care",
       "rating": 4.8,
-      "address": "Hailakandi",
-      "image": "assets/vendors/beauty/abc-salon.webp"
+      "reviewProvider": "Google",
+      "address": "Hailakandi, Assam",
+      "description": "Modern salon offering hair styling and beauty services.",
+      "phone": "+91XXXXXXXXXX",
+      "email": "abc@example.com",
+      "website": "https://example.com",
+      "maps": "https://maps.google.com/...",
+      "workingDays": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "openingTime": "09:00",
+      "closingTime": "19:00",
+      "services": [
+        "Haircut",
+        "Facial",
+        "Bridal Makeup"
+      ],
+      "gallery": [
+        "assets/vendors/beauty/abc1.webp",
+        "assets/vendors/beauty/abc2.webp"
+      ],
+      "image": "assets/vendors/beauty/abc-cover.webp",
+      "logo": "assets/vendors/beauty/abc-logo.webp",
+      "social": {
+        "instagram": "https://instagram.com/example",
+        "facebook": "https://facebook.com/example"
+      }
     }
   ]
 }
